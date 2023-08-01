@@ -37,4 +37,10 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+
+
+    public function profile (){
+        $profile= profile::where('user_id',$this->id)->first();
+        $profile= profile::where('foreing_key',$this->local_key)->first();
+        }
 }
